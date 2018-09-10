@@ -11,8 +11,25 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var singleStackView  : UIStackView!
+    
+    @IBOutlet weak var singleButton1: UIButton!
+    @IBOutlet weak var singleButton2: UIButton!
+    @IBOutlet weak var singleButton3: UIButton!
+    @IBOutlet weak var singleButton4: UIButton!
+    
     @IBOutlet weak var multipleStackView: UIStackView!
+    
+    @IBOutlet weak var multiLabel1: UILabel!
+    @IBOutlet weak var multiLabel2: UILabel!
+    @IBOutlet weak var multiLabel3: UILabel!
+    @IBOutlet weak var multiLabel4: UILabel!
+    
     @IBOutlet weak var rangedStackView  : UIStackView!
+    
+    @IBOutlet weak var rangeLabel1: UILabel!
+    @IBOutlet weak var rengeLabel2: UILabel!
+    
+    @IBOutlet weak var questionProgressView: UIProgressView!
     
     var questions : [ Question ] = [
         Question(text: "Какая еда вам нравится?",
@@ -48,7 +65,7 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
     }
 
     func updateUI() {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -212,11 +213,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GGw-hI-adk">
+                                <rect key="frame" x="32" y="462" width="256" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="axX-0k-gYA" firstAttribute="centerY" secondItem="SeR-bo-Z95" secondAttribute="centerY" id="4T1-KD-avH"/>
                             <constraint firstItem="BX0-mf-8T8" firstAttribute="leading" secondItem="SeR-bo-Z95" secondAttribute="leading" constant="16" id="7w1-Gg-Bb2"/>
+                            <constraint firstItem="GGw-hI-adk" firstAttribute="leading" secondItem="qN6-S8-yN0" secondAttribute="leadingMargin" constant="16" id="8vt-Fc-GEc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GGw-hI-adk" secondAttribute="trailing" constant="16" id="MJ8-4V-HJJ"/>
                             <constraint firstItem="yyX-b5-C2T" firstAttribute="leading" secondItem="SeR-bo-Z95" secondAttribute="leading" constant="16" id="NDe-R8-f0M"/>
                             <constraint firstItem="c6p-Ha-7xC" firstAttribute="top" secondItem="SeR-bo-Z95" secondAttribute="top" id="O2e-b0-RSd"/>
                             <constraint firstItem="SeR-bo-Z95" firstAttribute="trailing" secondItem="BX0-mf-8T8" secondAttribute="trailing" constant="16" id="OEZ-3I-8yz"/>
@@ -224,6 +230,7 @@
                             <constraint firstItem="yyX-b5-C2T" firstAttribute="centerY" secondItem="qN6-S8-yN0" secondAttribute="centerY" id="U02-8V-7nk"/>
                             <constraint firstItem="SeR-bo-Z95" firstAttribute="trailing" secondItem="axX-0k-gYA" secondAttribute="trailing" constant="16" id="Vla-fy-aJF"/>
                             <constraint firstItem="SeR-bo-Z95" firstAttribute="trailing" secondItem="yyX-b5-C2T" secondAttribute="trailing" constant="16" id="aKZ-ln-wMp"/>
+                            <constraint firstItem="SeR-bo-Z95" firstAttribute="bottom" secondItem="GGw-hI-adk" secondAttribute="bottom" constant="16" id="g8J-um-UGN"/>
                             <constraint firstItem="BX0-mf-8T8" firstAttribute="centerY" secondItem="SeR-bo-Z95" secondAttribute="centerY" id="gV8-Y9-Us1"/>
                             <constraint firstItem="axX-0k-gYA" firstAttribute="leading" secondItem="SeR-bo-Z95" secondAttribute="leading" constant="16" id="vUc-Gy-rPx"/>
                         </constraints>
@@ -231,8 +238,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="HPe-X7-G8K"/>
                     <connections>
+                        <outlet property="multiLabel1" destination="FEW-T8-tXg" id="5FF-bX-GuA"/>
+                        <outlet property="multiLabel2" destination="CF6-JE-E8D" id="viH-Qy-JyL"/>
+                        <outlet property="multiLabel3" destination="ZmS-4O-zf4" id="lZX-qd-Cbd"/>
+                        <outlet property="multiLabel4" destination="1OG-aF-2od" id="yY1-sd-vPE"/>
                         <outlet property="multipleStackView" destination="axX-0k-gYA" id="9Ku-eM-mxL"/>
+                        <outlet property="questionProgressView" destination="GGw-hI-adk" id="MhH-Qv-0cw"/>
+                        <outlet property="rangeLabel1" destination="JeH-TV-nND" id="ugG-T1-VQv"/>
                         <outlet property="rangedStackView" destination="BX0-mf-8T8" id="GAO-oe-Cwl"/>
+                        <outlet property="rengeLabel2" destination="fBU-b2-FAD" id="h1m-eR-73W"/>
+                        <outlet property="singleButton1" destination="r6z-aS-XSe" id="xiK-6Q-d15"/>
+                        <outlet property="singleButton2" destination="Y4Z-Ge-aLA" id="SgY-2f-HxY"/>
+                        <outlet property="singleButton3" destination="WoP-ON-3JQ" id="q5V-An-BFm"/>
+                        <outlet property="singleButton4" destination="Rq3-vx-CvV" id="cnI-gg-hCg"/>
                         <outlet property="singleStackView" destination="yyX-b5-C2T" id="9WV-Ht-7p1"/>
                         <segue destination="zh3-Qv-ew0" kind="show" identifier="ResultSegue" id="ewF-xA-3lN"/>
                     </connections>
