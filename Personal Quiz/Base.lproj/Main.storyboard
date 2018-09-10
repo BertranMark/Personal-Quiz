@@ -243,6 +243,7 @@
                         <outlet property="multiLabel3" destination="ZmS-4O-zf4" id="lZX-qd-Cbd"/>
                         <outlet property="multiLabel4" destination="1OG-aF-2od" id="yY1-sd-vPE"/>
                         <outlet property="multipleStackView" destination="axX-0k-gYA" id="9Ku-eM-mxL"/>
+                        <outlet property="questionLabel" destination="c6p-Ha-7xC" id="uqf-Lg-9tK"/>
                         <outlet property="questionProgressView" destination="GGw-hI-adk" id="MhH-Qv-0cw"/>
                         <outlet property="rangeLabel1" destination="JeH-TV-nND" id="ugG-T1-VQv"/>
                         <outlet property="rangedStackView" destination="BX0-mf-8T8" id="GAO-oe-Cwl"/>
