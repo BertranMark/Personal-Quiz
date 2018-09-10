@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E00C19E2146DEC6005972DD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00C19D2146DEC6005972DD /* Question.swift */; };
 		1E5ECB4621419CEF00895B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5ECB4521419CEF00895B71 /* AppDelegate.swift */; };
 		1E5ECB4821419CEF00895B71 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5ECB4721419CEF00895B71 /* IntroductionViewController.swift */; };
 		1E5ECB4B21419CEF00895B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5ECB4921419CEF00895B71 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E00C19D2146DEC6005972DD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1E5ECB4221419CEF00895B71 /* Personal Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personal Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5ECB4521419CEF00895B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E5ECB4721419CEF00895B71 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				1E5ECB4521419CEF00895B71 /* AppDelegate.swift */,
 				1E5ECB4721419CEF00895B71 /* IntroductionViewController.swift */,
+				1E00C19D2146DEC6005972DD /* Question.swift */,
 				1E5ECB4921419CEF00895B71 /* Main.storyboard */,
 				1E5ECB592141A54700895B71 /* ResultsViewController.swift */,
 				1E5ECB572141A53000895B71 /* QuestionViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E00C19E2146DEC6005972DD /* Question.swift in Sources */,
 				1E5ECB4821419CEF00895B71 /* IntroductionViewController.swift in Sources */,
 				1E5ECB4621419CEF00895B71 /* AppDelegate.swift in Sources */,
 				1E5ECB582141A53000895B71 /* QuestionViewController.swift in Sources */,
