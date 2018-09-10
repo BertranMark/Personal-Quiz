@@ -15,7 +15,7 @@ struct Question {
 }
 
 enum ResponseType {
-    case single, multiply, range
+    case single, multiply, ranged
 }
 
 struct Answer {
