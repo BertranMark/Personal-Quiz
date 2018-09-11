@@ -81,6 +81,7 @@ class QuestionViewController: UIViewController {
         let currentAnswers = questions[questionIndex].answers
         let index = Int(round(rangedSlider.value * Float(currentAnswers.count-1)))
         answersChosen.append(currentAnswers[index])
+        nextQuestion()
     }
     
     var questions : [ Question ] = [
@@ -131,7 +132,7 @@ class QuestionViewController: UIViewController {
         
         let currentQuestion  = questions[questionIndex]
         let currentAnswers   = currentQuestion.answers
-        let totalProgress    = Float(questionIndex) / Float (questions.count)
+        let totalProgress    = Float(questionIndex+1) / Float (questions.count)
         
         questionLabel.text = currentQuestion.text
         questionProgressView.setProgress(totalProgress, animated: true)
@@ -159,6 +160,10 @@ class QuestionViewController: UIViewController {
     
     func updatemultipleStack(using answers: [Answer]) {
         multipleStackView.isHidden = false
+        multiSwitch1.isOn = false
+        multiSwitch2.isOn = false
+        multiSwithc3.isOn = false
+        multiSwitch4.isOn = false
         multiLabel1.text = answers[0].text
         multiLabel2.text = answers[1].text
         multiLabel3.text = answers[2].text
@@ -167,11 +172,31 @@ class QuestionViewController: UIViewController {
     
     func updateRangedStack(using answers: [Answer]) {
         rangedStackView.isHidden = false
+        rangedSlider.setValue(0.5, animated: true)
         rangeLabel1.text = answers[0].text
         rengeLabel2.text = answers.last?.text
     }
     
+    
+    
     func nextQuestion() {
         // TODO
+        
+        questionIndex += 1
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "ResultSegue", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultSegue" {
+            let resultsViewController = segue.destination as! ResultsViewController
+            resultsViewController.responces = answersChosen
+            questionIndex = 0
+            answersChosen = []
+            updateUI()
+        }
     }
 }

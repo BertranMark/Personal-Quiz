@@ -10,26 +10,45 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    var responces : [Answer]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        calculatePersonalityResult()
+        navigationItem.hidesBackButton = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    @IBOutlet weak var resultLabel: UILabel!
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var textLabel: UILabel!
+    
+    func calculatePersonalityResult() {
+        var frequencyOfAnswers: [AnimalType: Int] = [:]
+        let responceTypes = responces.map { $0.type }
+        // из массива ответов берем массив типов животных
+        
+        for animal in responceTypes {
+            if  frequencyOfAnswers[animal] == nil {
+                frequencyOfAnswers[animal] = 1
+            } else {
+                frequencyOfAnswers[animal] = frequencyOfAnswers[animal]! + 1
+            }
+        }
+        // подсчет количества ответов связанных с конкретным животным
+        
+        let freqSorted    = frequencyOfAnswers.sorted { $0.1 > $1.1 }
+        let maximumAnimal = freqSorted.first?.key
+        let maximumValue  = freqSorted.first?.value
+        // поиск животного, встречающегося максимальное количество раз в ответах и определение количества этих ответов
+        
+        
+        if maximumValue == 1 { // это значит, что пользователь выбирал каждый раз ответ для разных животных
+            resultLabel.text = "Хм..."
+            textLabel.text = "Похоже вам трудно определиться. Нажмите Done и попробуйте пройти тест снова"
+        } else {
+            resultLabel.text = "Вы \(maximumAnimal!.rawValue)"
+            textLabel.text = maximumAnimal?.definition
+        }
+       
     }
-    */
 
 }
